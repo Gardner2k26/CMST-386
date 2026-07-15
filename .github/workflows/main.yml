@@ -1,0 +1,23 @@
+name: Deploy CMST386 Website
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  build-and-deploy:
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Deploy to Azure Web App
+        uses: azure/webapps-deploy@v3
+        with:
+          app-name: 'cmst386-umgc-tgardner37'
+          slot-name: 'production'
+          publish-profile: ${{ secrets.APPSERVICECMST388 }}
+          package: '.'
