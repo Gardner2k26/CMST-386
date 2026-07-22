@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="Information about responsive web design, website analytics, and CSS preprocessing for CMST 386 Project 3.">
+
+    <title>Project 3: Responsive Design and Analytics</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body id="top">
+
+<header class="site-header">
+    <div class="container">
+        <h1>Project 3: Responsive Design and CSS Preprocessors</h1>
+    </div>
+</header>
+
+<nav class="main-navigation">
+    <div class="container nav-container">
+
+        <button class="menu-toggle" type="button" aria-label="Open navigation menu">
+            &#9776;
+        </button>
+
+        <ul class="navigation-menu">
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="project3.html">Project 3</a></li>
+        </ul>
+
+    </div>
+</nav>
+
+<main class="container">
+
+    <nav class="breadcrumbs" aria-label="Breadcrumb">
+        <a href="../index.html">Home</a>
+        <span>&gt;</span>
+        <span>Project 3</span>
+    </nav>
+
+    <section>
+        <h2>The Importance of Responsive Design</h2>
+
+        <p>
+            Responsive design is important because users access websites through
+            phones, tablets, laptops, and desktop computers with different screen
+            sizes. A responsive website adjusts its layout, navigation, images,
+            and text so the content remains readable and functional on each device.
+            This improves the experience of the target audience by reducing excessive
+            scrolling, zooming, and difficulty locating information. Responsive
+            design can also increase engagement because visitors are more likely
+            to remain on a website that is easy to navigate and understand.
+        </p>
+    </section>
+
+    <section>
+        <h2>Google Analytics Reports</h2>
+
+        <div class="analytics-grid">
+
+            <article class="card">
+                <h3>Pages and Screens Report</h3>
+
+                <p>
+                    The Pages and Screens report identifies the pages visitors view
+                    most frequently. It can show page views, users, engagement time,
+                    and activity associated with individual pages. This information
+                    helps determine which subjects and resources are most useful to
+                    the target audience.
+                </p>
+            </article>
+
+            <article class="card">
+                <h3>User Acquisition Report</h3>
+
+                <p>
+                    The User Acquisition report explains how new users first reached
+                    the website. Visitors may arrive through search engines, social
+                    media, direct links, referrals, or advertising. This helps a
+                    website owner determine which marketing channels successfully
+                    attract the intended audience.
+                </p>
+            </article>
+
+            <article class="card">
+                <h3>Engagement Report</h3>
+
+                <p>
+                    Engagement reports show how visitors interact with the website.
+                    They can provide information about engaged sessions, average
+                    engagement time, events, and conversions. These measurements help
+                    determine whether users are reading content, selecting links, and
+                    completing important actions.
+                </p>
+            </article>
+
+        </div>
+    </section>
+
+    <section class="call-to-action">
+        <h2>Learn More About CSS Preprocessing</h2>
+
+        <p>
+            Continue to the preprocessing page to learn how LESS and SASS help
+            developers organize and extend CSS.
+        </p>
+
+        <a class="cta-button" href="preprocessing.html">
+            Learn Preprocessing
+        </a>
+    </section>
+
+</main>
+
+<footer class="site-footer">
+    <div class="container">
+        <p>&copy; 2026 Naja Gardner</p>
+    </div>
+</footer>
+
+<script>
+    const menuButton = document.querySelector(".menu-toggle");
+    const navigationMenu = document.querySelector(".navigation-menu");
+
+    menuButton.addEventListener("click", function () {
+        navigationMenu.classList.toggle("show");
+    });
+</script>
+
+</body>
+</html>
