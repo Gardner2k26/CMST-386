@@ -1,0 +1,575 @@
+$page-background: #f4f0ff;
+$dark-purple: #21143f;
+$bright-purple: #6d3df2;
+$link-purple: #5b2de0;
+$text-color: #222222;
+$white: #ffffff;
+
+$body-font: Arial, Helvetica, sans-serif;
+$heading-font: "Poppins", Arial, Helvetica, sans-serif;
+
+$maximum-width: 1050px;
+$standard-spacing: 20px;
+$large-spacing: $standard-spacing * 2;
+
+$tablet-width: 900px;
+$phone-width: 600px;
+
+@mixin box-shadow($shadow-color: rgba(33, 20, 63, 0.15)) {
+    box-shadow: 0 4px 16px $shadow-color;
+}
+
+@mixin card-style {
+    background-color: $white;
+    border-radius: 10px;
+    padding: 25px;
+    border-top: 5px solid $bright-purple;
+    @include box-shadow;
+}
+
+@mixin button-style {
+    display: inline-block;
+    padding: 14px 26px;
+    border-radius: 30px;
+    font-family: $heading-font;
+    font-weight: 700;
+    text-decoration: none;
+    text-align: center;
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        background-color 0.2s ease;
+
+    &:hover,
+    &:focus {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 14px rgba(33, 20, 63, 0.3);
+    }
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: $body-font;
+    background-color: $page-background;
+    color: $text-color;
+    margin: 0;
+    padding: 0;
+}
+
+p {
+    line-height: 1.7;
+    font-size: 1rem;
+}
+
+a {
+    color: $link-purple;
+
+    &:hover,
+    &:focus {
+        color: $dark-purple;
+    }
+}
+
+h1,
+h2,
+h3 {
+    font-family: $heading-font;
+}
+
+h1 {
+    margin-top: 0;
+    font-size: 2.5rem;
+    line-height: 1.2;
+}
+
+h2 {
+    color: $dark-purple;
+    border-bottom: 2px solid $bright-purple;
+    padding-bottom: 8px;
+    margin-top: 0;
+}
+
+h3 {
+    color: $bright-purple;
+}
+
+.site-header {
+    background-color: $dark-purple;
+    color: $white;
+    padding: 22px 20px;
+    border-bottom: 5px solid $bright-purple;
+}
+
+.header-container {
+    max-width: $maximum-width;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: $standard-spacing;
+}
+
+.site-logo {
+    color: $white;
+    font-family: $heading-font;
+    font-size: 1.35rem;
+    font-weight: 700;
+    text-decoration: none;
+
+    &:hover,
+    &:focus {
+        color: lighten($bright-purple, 25%);
+    }
+}
+
+.main-navigation {
+    position: relative;
+
+    .menu-toggle {
+        position: absolute;
+        opacity: 0;
+        pointer-events: none;
+    }
+
+    .navigation-menu {
+        display: flex;
+        align-items: center;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        gap: 5px;
+
+        li {
+            margin: 0;
+        }
+
+        a {
+            color: $white;
+            display: block;
+            font-family: $heading-font;
+            font-weight: 600;
+            padding: 12px 18px;
+            border-radius: 6px;
+            text-decoration: none;
+
+            &:hover,
+            &:focus,
+            &[aria-current="page"] {
+                background-color: $bright-purple;
+                color: $white;
+            }
+        }
+    }
+}
+
+.menu-button {
+    display: none;
+    width: 44px;
+    height: 40px;
+    padding: 8px;
+    border: 2px solid $white;
+    border-radius: 6px;
+    cursor: pointer;
+
+    span {
+        display: block;
+        width: 100%;
+        height: 3px;
+        margin: 4px 0;
+        background-color: $white;
+        border-radius: 2px;
+    }
+}
+
+.breadcrumbs {
+    background-color: $white;
+    border-bottom: 4px solid $bright-purple;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+
+    ol {
+        max-width: $maximum-width;
+        margin: 0 auto;
+        padding: 12px 20px;
+        list-style: none;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+    }
+
+    li {
+        font-size: 0.95rem;
+
+        &:not(:last-child)::after {
+            content: "›";
+            color: $bright-purple;
+            font-weight: bold;
+            margin: 0 10px;
+        }
+    }
+
+    a {
+        color: $link-purple;
+        font-weight: bold;
+        text-decoration: none;
+
+        &:hover,
+        &:focus {
+            text-decoration: underline;
+        }
+    }
+}
+
+main {
+    max-width: $maximum-width;
+    margin: 35px auto;
+    padding: 35px;
+    background-color: $white;
+    border-radius: 10px;
+    border-top: 6px solid $bright-purple;
+    @include box-shadow;
+}
+
+section {
+    margin-bottom: 45px;
+}
+
+.section-container {
+    width: 100%;
+}
+
+.section-heading {
+    margin-bottom: 25px;
+}
+
+.eyebrow {
+    color: $bright-purple;
+    font-family: $heading-font;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+}
+
+.hero {
+    background: linear-gradient(
+        135deg,
+        lighten($bright-purple, 33%),
+        $page-background
+    );
+    border-radius: 10px;
+    padding: 50px 40px;
+    border-left: 7px solid $bright-purple;
+
+    .hero-content {
+        max-width: 760px;
+    }
+
+    h1 {
+        color: $dark-purple;
+    }
+}
+
+.preprocessing-hero {
+    background: linear-gradient(
+        135deg,
+        lighten($dark-purple, 72%),
+        lighten($bright-purple, 34%)
+    );
+}
+
+.two-column-layout {
+    display: flex;
+    gap: 25px;
+    align-items: stretch;
+
+    .content-card {
+        flex: 1;
+    }
+}
+
+.reports-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+}
+
+.mechanisms-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 22px;
+}
+
+.content-card,
+.report-card,
+.feature-card {
+    @include card-style;
+
+    h3 {
+        margin-top: 0;
+    }
+
+    p:last-child {
+        margin-bottom: 0;
+    }
+}
+
+.report-card {
+    position: relative;
+
+    .card-number {
+        display: inline-block;
+        color: rgba($bright-purple, 0.35);
+        font-family: $heading-font;
+        font-size: 2.4rem;
+        font-weight: 700;
+        margin-bottom: 10px;
+    }
+}
+
+.implementation-card {
+    border-left: 5px solid $bright-purple;
+    border-top: none;
+}
+
+.alternate-section {
+    background-color: lighten($page-background, 1%);
+    border-radius: 10px;
+    padding: 30px;
+}
+
+.cta-section {
+    margin-bottom: 30px;
+}
+
+.cta-panel {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+    background-color: lighten($dark-purple, 72%);
+    border: 2px solid lighten($bright-purple, 20%);
+    border-radius: 12px;
+    padding: 30px;
+
+    h2 {
+        border-bottom: none;
+        margin-bottom: 5px;
+    }
+
+    p {
+        margin-bottom: 0;
+    }
+}
+
+.cta-button {
+    @include button-style;
+    color: $white;
+    background: linear-gradient(135deg, $bright-purple, $dark-purple);
+    box-shadow: 0 5px 12px rgba(33, 20, 63, 0.35);
+    white-space: nowrap;
+
+    &:hover,
+    &:focus {
+        color: $white;
+        background: linear-gradient(
+            135deg,
+            darken($bright-purple, 8%),
+            darken($dark-purple, 3%)
+        );
+    }
+}
+
+.secondary-button {
+    @include button-style;
+    color: $dark-purple;
+    background-color: $white;
+    border: 2px solid $bright-purple;
+    white-space: nowrap;
+
+    &:hover,
+    &:focus {
+        color: $white;
+        background-color: $bright-purple;
+    }
+}
+
+code {
+    background-color: $page-background;
+    color: $dark-purple;
+    border: 1px solid lighten($bright-purple, 25%);
+    border-radius: 4px;
+    padding: 2px 6px;
+    font-size: 0.95rem;
+}
+
+.back-to-top-container {
+    text-align: center;
+    margin-top: 35px;
+}
+
+.back-to-top {
+    @include button-style;
+    color: $white;
+    background-color: $dark-purple;
+
+    &:hover,
+    &:focus {
+        color: $white;
+        background-color: $bright-purple;
+    }
+}
+
+.site-footer {
+    background-color: $dark-purple;
+    color: $white;
+    text-align: center;
+    padding: 22px;
+    margin-top: 35px;
+    border-top: 5px solid $bright-purple;
+
+    p {
+        margin: 0;
+    }
+}
+
+@media screen and (max-width: $tablet-width) {
+    main {
+        width: calc(100% - 40px);
+        padding: 28px;
+    }
+
+    .hero {
+        padding: 40px 30px;
+    }
+
+    .two-column-layout {
+        flex-direction: column;
+    }
+
+    .reports-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .cta-panel {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+}
+
+@media screen and (max-width: $phone-width) {
+    .site-header {
+        padding: 18px 15px;
+    }
+
+    .header-container {
+        position: relative;
+    }
+
+    .site-logo {
+        font-size: 1.05rem;
+        max-width: 70%;
+    }
+
+    .menu-button {
+        display: block;
+    }
+
+    .main-navigation {
+        .navigation-menu {
+            display: none;
+            position: absolute;
+            top: 50px;
+            right: 0;
+            width: 220px;
+            background-color: $white;
+            border: 2px solid $bright-purple;
+            border-radius: 8px;
+            padding: 8px;
+            z-index: 100;
+            @include box-shadow;
+
+            li {
+                width: 100%;
+            }
+
+            a {
+                color: $dark-purple;
+                width: 100%;
+
+                &:hover,
+                &:focus,
+                &[aria-current="page"] {
+                    color: $white;
+                }
+            }
+        }
+
+        .menu-toggle:checked ~ .navigation-menu {
+            display: flex;
+            flex-direction: column;
+            align-items: stretch;
+        }
+    }
+
+    .breadcrumbs {
+        ol {
+            padding: 10px 15px;
+        }
+
+        li {
+            font-size: 0.85rem;
+        }
+    }
+
+    main {
+        width: calc(100% - 20px);
+        margin: 20px auto;
+        padding: 20px;
+        border-radius: 8px;
+    }
+
+    h1 {
+        font-size: 1.9rem;
+    }
+
+    h2 {
+        font-size: 1.45rem;
+    }
+
+    .hero {
+        padding: 30px 20px;
+    }
+
+    .reports-grid,
+    .mechanisms-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .alternate-section {
+        padding: 20px;
+    }
+
+    .content-card,
+    .report-card,
+    .feature-card {
+        padding: 20px;
+    }
+
+    .cta-panel {
+        padding: 22px;
+    }
+
+    .cta-button,
+    .secondary-button {
+        width: 100%;
+        white-space: normal;
+    }
+}
